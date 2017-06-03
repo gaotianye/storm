@@ -33,9 +33,9 @@ public class WordCountSpout extends BaseRichSpout {
 		//第一个参数：监控的目录
 		//第二个参数：监控的后缀名
 		//第三个参数：是否递归读取文件目录下的数据
-//		Collection<File> listFiles = FileUtils.listFiles(new File("H:/test"), new String[]{"txt"}, true);
+		Collection<File> listFiles = FileUtils.listFiles(new File("H:/test"), new String[]{"txt"}, true);
 		
-		Collection<File> listFiles = FileUtils.listFiles(new File("/gaotianye/"), new String[]{"txt"}, true);
+//		Collection<File> listFiles = FileUtils.listFiles(new File("/gaotianye/"), new String[]{"txt"}, true);
 		for (File file : listFiles) {
 			List<String> lines = null;
 			try {
