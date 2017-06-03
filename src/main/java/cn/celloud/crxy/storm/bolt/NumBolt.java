@@ -24,8 +24,8 @@ public class NumBolt extends BaseRichBolt {
 	int sum = 0;
 	public void execute(Tuple input) {
 		Integer num = input.getIntegerByField("num");
-		sum +=num;
-		System.out.println("sum="+sum);
+//		sum +=num;
+		System.out.println("线程："+Thread.currentThread().getId()+"num="+num);
 	}
 
 	public void declareOutputFields(OutputFieldsDeclarer declarer) {
