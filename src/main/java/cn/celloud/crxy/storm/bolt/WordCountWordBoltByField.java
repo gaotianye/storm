@@ -38,6 +38,7 @@ public class WordCountWordBoltByField extends BaseRichBolt {
 		}
 		value++;
 		hashMap.put(word, value);
+		System.out.println("线程："+Thread.currentThread().getId()+",word:"+word+",value:"+value);
 		this.collector.emit(new Values(word,value));
 	}
 
