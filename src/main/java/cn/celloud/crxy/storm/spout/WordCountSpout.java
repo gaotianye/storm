@@ -42,8 +42,8 @@ public class WordCountSpout extends BaseRichSpout {
 				lines = FileUtils.readLines(file);
 				for (String line : lines) {
 					this.collector.emit(new Values(line));
-					FileUtils.moveFile(file, new File(file.getAbsolutePath()+System.currentTimeMillis()));
 				}
+				FileUtils.moveFile(file, new File(file.getAbsolutePath()+System.currentTimeMillis()));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
