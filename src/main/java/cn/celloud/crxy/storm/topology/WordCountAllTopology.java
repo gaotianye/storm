@@ -21,7 +21,7 @@ public class WordCountAllTopology {
 		topologyBuilder.setSpout("a", new WordCountSpout());
 		// 指定让wordcountlinebolt接收wordcountspout的输出，通过shuffergrouping
 		topologyBuilder.setBolt("b", new WordCountLineBolt()).shuffleGrouping("a");
-		// 指定让wordcountwordbolt接收wordcountlinebolt的输出，通过shuffergrouping
+		// 指定让wordcountwordboltByField接收wordcountlinebolt的输出，通过fieldsGrouping
 		topologyBuilder.setBolt("c", new WordCountWordBoltByField(),2).fieldsGrouping("b", new Fields("word"));
 		topologyBuilder.setBolt("d", new WordCountAllBolt()).shuffleGrouping("c");
 
