@@ -48,13 +48,14 @@ public class MyBoltCount extends BaseRichBolt {
 	public void declareOutputFields(OutputFieldsDeclarer declarer) {
 		
 	}
+	
 	/**
 	 * 设置定时任务,不要频繁的访问数据库
 	 */
 	@Override
 	public Map<String, Object> getComponentConfiguration() {
-		HashMap<String, Object> hashMap = new HashMap<String, Object>();
-		hashMap.put(Config.TOPOLOGY_TICK_TUPLE_FREQ_SECS, 5);
-		return hashMap;
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put(Config.TOPOLOGY_TICK_TUPLE_FREQ_SECS, 5);
+		return map;
 	}
 }
