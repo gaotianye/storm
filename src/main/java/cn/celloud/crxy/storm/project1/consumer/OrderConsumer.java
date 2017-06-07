@@ -57,7 +57,7 @@ public class OrderConsumer extends Thread {
 		}
 	}
 	
-	private Queue getQueue(){
+	public Queue getQueue(){
 		return queue;
 	}
 	public static void main(String[] args) {
